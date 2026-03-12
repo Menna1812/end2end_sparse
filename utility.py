@@ -30,9 +30,6 @@ import torch
 from torch.utils.data import Dataset
 import h5py
 
-# -----------------------------------------
-# Sparse conversion
-# -----------------------------------------
 
 def to_sparse_hwC(x):
     """
@@ -60,9 +57,6 @@ def to_sparse_hwC(x):
     return coords.long(), feats.float()
 
 
-# -----------------------------------------
-# Collate function
-# -----------------------------------------
 
 def sparse_collate_hwC(batch):
     """
@@ -109,9 +103,6 @@ def sparse_collate_hwC(batch):
     return coords, feats, sizes
 
 
-# -----------------------------------------
-# VSC kernel offsets
-# -----------------------------------------
 
 KERNEL_3x3 = [
 (-1,-1),(-1,0),(-1,1),
@@ -123,10 +114,6 @@ KERNEL_3x3 = [
 Used for rulebook-based sparse convolution.
 """
 
-
-# -----------------------------------------
-# Rulebook construction
-# -----------------------------------------
 
 def build_vsc_rulebook(coords, offsets=KERNEL_3x3):
     """
@@ -177,9 +164,6 @@ def build_vsc_rulebook(coords, offsets=KERNEL_3x3):
     return rules
 
 
-# -----------------------------------------
-# VSC forward
-# -----------------------------------------
 
 def vsc_forward_rulebook(feats, rules, weight, bias=None):
     """
@@ -222,9 +206,6 @@ def vsc_forward_rulebook(feats, rules, weight, bias=None):
     return out
 
 
-# -----------------------------------------
-# Coordinate downsampling
-# -----------------------------------------
 
 def downsample_coords_stride2(coords):
     """
@@ -248,11 +229,6 @@ def downsample_coords_stride2(coords):
     coords[:,2] //= 2
 
     return coords
-
-
-# -----------------------------------------
-# Global pooling
-# -----------------------------------------
 
 
 def sparse_global_mean_pool(coords, feats, batch_size):

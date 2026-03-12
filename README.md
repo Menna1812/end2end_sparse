@@ -3,6 +3,43 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Project Architecture
+
+```mermaid
+flowchart LR
+
+    subgraph Unsupervised Pretraining
+        A[Unlabelled Dataset<br>60k samples]
+        B[Stage 1 Sparse Autoencoder<br>Encoder1: 8→16→32]
+        C[Latent Representations<br>32D]
+        D[Stage 2 Sparse Autoencoder<br>Encoder2: 32→64]
+
+        A --> B
+        B --> C
+        C --> D
+    end
+
+    subgraph Supervised Learning
+        E[Labelled Dataset<br>10k samples]
+        F[Frozen Sparse Encoders]
+        G[Classifier Head]
+        H[Binary Classification]
+
+        D --> F
+        E --> G
+        F --> G
+        G --> H
+    end
+
+    subgraph Evaluation
+        I[Model Pruning]
+        J[FLOPs vs Error Analysis]
+    end
+
+    H --> I
+    I --> J
+```
+
 This repository implements a hierarchical sparse learning pipeline for particle-physics event classification. The project uses rulebook-based sparse convolutions, two stages of unsupervised pretraining, classifier fine-tuning on labelled data, and pruning-based FLOPs–error analysis. A dense CNN baseline is also included for comparison.
 
 ---
