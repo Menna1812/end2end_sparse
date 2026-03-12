@@ -167,6 +167,7 @@ This curve shows the trade-off between pruning level and model error.
 
 ### Dense Baseline FLOPs vs Error
 ![Classification error for the dense CNN baseline](assets/dense_pruning_analysis.png)
+
 The dense CNN baseline achieves lower classification error in the unpruned case but requires higher computational cost.
 
 ---
