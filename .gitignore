@@ -1,4 +1,4 @@
 data/
-models /
-ae1_trained.pth
+models /ae1_trained.pth
+/__pycache__
 __pycache__/
