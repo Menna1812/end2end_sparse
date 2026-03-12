@@ -78,18 +78,26 @@ The workflow is sequential: learn sparse representations on unlabelled data, reu
 
 ```
 end2end_sparse/
-├── Data inspection and stage 1 ae.ipynb
-├── stage2_autoencoder.ipynb
-├── fine tuning.ipynb
-├── evaluation.ipynb
-├── Bonus task.ipynb
-├── models_arch.py
-├── utility.py
+├── notebooks/
+│   ├── Data inspection and stage 1 ae.ipynb
+│   ├── stage2_autoencoder.ipynb
+│   ├── fine tuning.ipynb
+│   ├── evaluation.ipynb
+│   └── Bonus task.ipynb
+├── utils/
+│   ├── utility.py
+│   └── models_arch.py
 ├── data/
-│   ├── Dataset_Specific_Unlabelled.h5
 │   ├── Dataset_Specific_labelled.h5
-│   └── latent.h5
-└── checkpoints or .pth files
+│   └── Dataset_Specific_unlabelled.h5
+├── models/
+│   ├── ae1_trained.pth
+│   ├── ae2_trained.pth
+│   └── best_sparse_classifier.pth
+├── assets/
+│   ├── sparse_pruning_analysis.png
+│   └── dense_pruning_analysis.png
+├── README.md
 ```
 
 ### Notebook Roles

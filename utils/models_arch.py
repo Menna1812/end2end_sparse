@@ -24,7 +24,7 @@ Pipeline Stages:
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from utility import *
+from utils.utility import *
 
 
 class VSC3x3Rulebook(nn.Module):

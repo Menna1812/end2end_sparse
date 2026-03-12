@@ -1,1 +1,4 @@
 data/
+models /
+ae1_trained.pth
+__pycache__/
