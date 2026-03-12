@@ -201,7 +201,7 @@ pip install torch h5py numpy matplotlib ptflops
 
 ## Notes
 
-- the first trained autoencoder is in the gitignore due to its size. It's uploaded in this ![google drive link](https://drive.google.com/file/d/11HLJNu26kZoD8ORALLmH8-BsIPg2zSwK/view?usp=sharing)
+- the first trained autoencoder is in the gitignore due to its size. It's uploaded in this [google drive link](https://drive.google.com/file/d/11HLJNu26kZoD8ORALLmH8-BsIPg2zSwK/view?usp=sharing)
 
 - Sparse FLOPs values are estimated using rulebook statistics and depend on dataset sparsity
 - Results may vary slightly depending on data splits and pruning configuration
