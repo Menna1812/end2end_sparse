@@ -175,8 +175,11 @@ This curve shows the trade-off between pruning level and model error.
 
 ### Dense Baseline FLOPs vs Error
 ![Classification error for the dense CNN baseline](assets/dense_pruning_analysis.png)
+We can observe the error increases and then decreases during the pruning. This behaviour could be attributed to the following reasons: 
+**1- Model architecture:** The original baseline uses ResNet-15, which is a large and deep model. The model used for testing here is a smaller architecture, so the training was not fully optimized.
+**2- Data:** The dataset used for training and evaluating the model consists of only 10k samples, whereas the baseline was trained on approximately 150k–360k samples depending on the pseudorapidity category used. This significant difference in training data is expected to impact the results.
 
-The dense CNN baseline achieves lower classification error in the unpruned case but requires higher computational cost.
+These results are therefore intended as a proof of concept rather than a reflection of the full potential of the approach.
 
 ---
 
